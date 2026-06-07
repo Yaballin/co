@@ -862,6 +862,109 @@ footer {
 .d3 { transition-delay: 0.25s; }
 .d4 { transition-delay: 0.35s; }
 
+/* MODAL JOIAS */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.85);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--offwhite);
+  max-width: 480px;
+  width: 100%;
+  position: relative;
+}
+.modal-img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  background: #e5dfd0;
+}
+.modal-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #e5dfd0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-body { padding: 1.75rem; }
+.modal-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--blue);
+  color: var(--offwhite);
+  padding: 0.25rem 0.65rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.modal-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.modal-mat {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1rem;
+}
+.modal-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.modal-btn:hover { background: var(--black); }
+.modal-close {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: var(--black);
+  color: var(--offwhite);
+  border: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  width: 32px; height: 32px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}  
+  
 @media (max-width: 600px) {
   .hero-img-placeholder { display: none; }
   .services-header { flex-direction: column; }
