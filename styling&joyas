@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BALLIN BY YA</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --blue: #2D00F7;
+  --yellow: #CCFF00;
+  --red: #FF3200;
+  --offwhite: #F0EBE0;
+  --black: #0A0A0A;
+  --pink: #F2C4B0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Barlow', sans-serif;
+  background: var(--offwhite);
+  color: var(--black);
+  overflow-x: hidden;
+  cursor: crosshair;
+}
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+  background: var(--blue);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0.9rem 2rem;
+}
+
+.nav-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--offwhite);
+  text-decoration: none;
+}
+
+.nav-logo span { color: var(--yellow); }
+
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+
+.nav-links a {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.7);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--yellow); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(8rem, 20vw, 18rem);
+  color: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.hero-img-placeholder {
+  position: absolute;
+  top: 80px; right: 2rem;
+  width: clamp(220px, 35vw, 420px);
+  height: clamp(300px, 55vh, 600px);
+  border: 1px dashed rgba(240,235,224,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-img-placeholder span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.25);
+}
+
+.hero-content { position: relative; z-index: 2; max-width: 700px; }
+
+.hero-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 2px;
+  background: var(--yellow);
+}
+
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.92;
+  color: var(--offwhite);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
+}
+
+.hero-title .accent { color: var(--red); }
+
+.hero-sub {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(240,235,224,0.7);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 2rem;
+}
+
+.hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.btn-yellow {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: transform 0.15s, background 0.15s;
+}
+
+.btn-yellow:hover { transform: translate(-2px,-2px); background: #d4ff00; }
+
+.btn-outline-white {
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--offwhite);
+  border: 2px solid var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-outline-white:hover { background: var(--offwhite); color: var(--blue); }
+
+/* MARQUEE */
+.marquee-wrap {
+  background: var(--yellow);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+}
+
+.marquee-track {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-item {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 0 1.5rem;
+}
+
+.marquee-sep { margin: 0 0.5rem; color: var(--blue); font-weight: 900; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* POR QUE STYLIST */
+.why-section {
+  background: var(--offwhite);
+  padding: 6rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--blue);
+}
+
+.why-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--blue);
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border: 2px solid var(--black);
+}
+
+.why-card {
+  padding: 2rem;
+  border-right: 2px solid var(--black);
+  transition: background 0.2s;
+}
+
+.why-card:last-child { border-right: none; }
+.why-card:hover { background: var(--blue); color: var(--offwhite); }
+.why-card:hover .why-card-num { color: var(--yellow); }
+.why-card:hover .why-card-title { color: var(--offwhite); }
+.why-card:hover .why-card-desc { color: rgba(240,235,224,0.75); }
+
+.why-card-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(0,0,0,0.1);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+
+.why-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.why-card-desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #444;
+  transition: color 0.2s;
+}
+
+/* MANIFESTO */
+.manifesto {
+  background: var(--blue);
+  padding: 5rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 3px solid var(--black);
+}
+
+.manifesto-quote {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--offwhite);
+  max-width: 900px;
+  margin: 0 auto 1.5rem;
+}
+
+.manifesto-quote .hl { color: var(--red); }
+.manifesto-quote .hl2 { color: var(--yellow); }
+
+.manifesto-sub {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.5);
+}
+
+/* TAPE */
+.tape {
+  background: var(--yellow);
+  padding: 0.4rem 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* SERVICES */
+.services-section {
+  background: var(--offwhite);
+  padding: 6rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.services-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.services-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--black);
+}
+
+.services-title span { color: var(--blue); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0;
+  border: 2px solid var(--black);
+}
+
+.service-card {
+  padding: 2rem 1.75rem;
+  border-right: 2px solid var(--black);
+  border-bottom: 2px solid var(--black);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
+}
+
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { background: #f8f4e8; }
+
+.service-tag {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.service-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.service-includes {
+  margin-bottom: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+
+.service-includes li {
+  font-size: 0.78rem;
+  color: #444;
+  list-style: none;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.service-includes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.service-footer {
+  border-top: 1px solid rgba(0,0,0,0.12);
+  padding-top: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.service-duration {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.service-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+.service-price-alt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+
+.service-note {
+  font-size: 0.68rem;
+  color: #999;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* IMPORTANT */
+.important-section {
+  background: var(--black);
+  padding: 4rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.important-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 2.5rem;
+}
+
+.important-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.important-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.important-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--blue);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.important-text {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(240,235,224,0.75);
+  padding-top: 0.3rem;
+}
+
+/* JOIAS */
+.joias-section {
+  background: var(--offwhite);
+  padding: 6rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.joias-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.joias-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--black);
+}
+
+.joias-title span { color: var(--blue); }
+
+.joias-note {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: #888;
+  max-width: 260px;
+  line-height: 1.6;
+  padding-top: 0.5rem;
+}
+
+.joias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.joia-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.joia-img {
+  aspect-ratio: 3/4;
+  background: #e5dfd0;
+  border: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.joia-card:hover .joia-img { border-color: var(--blue); }
+
+.joia-img-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.25);
+}
+
+.joia-badge {
+  position: absolute;
+  top: 0.6rem; left: 0.6rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+}
+
+.joia-badge.novo { background: var(--red); }
+.joia-badge.ultimo { background: var(--black); }
+
+.joia-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  margin-bottom: 0.2rem;
+}
+
+.joia-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.joia-mat {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.joia-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--blue);
+}
+
+/* CONTACT */
+.contact-section {
+  background: var(--blue);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact-bg-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(6rem, 18vw, 16rem);
+  color: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
+.contact-inner { position: relative; z-index: 2; }
+
+.contact-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 7rem);
+  text-transform: uppercase;
+  color: var(--offwhite);
+  line-height: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.contact-tagline {
+  display: inline-block;
+  background: var(--yellow);
+  padding: 0.35rem 1.25rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+  transform: rotate(-0.8deg);
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-contact-wpp {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--yellow);
+  transition: transform 0.15s;
+}
+
+.btn-contact-wpp:hover { transform: translate(-2px,-2px); }
+
+.btn-contact-ig {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--offwhite);
+  border: 2px solid var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-contact-ig:hover { background: var(--offwhite); color: var(--blue); }
+
+.contact-info {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(240,235,224,0.5);
+  letter-spacing: 0.06em;
+}
+
+/* FOOTER */
+footer {
+  background: var(--black);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--offwhite);
+}
+
+.footer-logo span { color: var(--yellow); }
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(240,235,224,0.3);
+  letter-spacing: 0.08em;
+}
+
+/* FORMS LINK SECTION */
+.forms-section {
+  background: var(--yellow);
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+}
+
+.forms-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 0.95;
+}
+
+.forms-sub {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  margin-top: 0.5rem;
+}
+
+.btn-forms {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-forms:hover { background: var(--black); border-color: var(--black); }
+
+/* FADE IN */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.15s; }
+.d3 { transition-delay: 0.25s; }
+.d4 { transition-delay: 0.35s; }
+
+@media (max-width: 600px) {
+  .hero-img-placeholder { display: none; }
+  .services-header { flex-direction: column; }
+  .forms-section { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">BALLIN <span>BY YA</span></a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#joias">Joias</a></li>
+    <li><a href="#contato">Contato</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-text" aria-hidden="true">BALLIN</div>
+
+  <div class="hero-img-placeholder" aria-hidden="true">
+    <span>Sua foto aqui</span>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow">São Paulo · Styling & Joias</p>
+    <h1 class="hero-title">
+      EU NÃO MONTO<br>
+      LOOKS,<br>
+      CRIO <span class="accent">VERSÕES</span><br>
+      INESQUECÍVEIS<br>
+      DE VOCÊ.
+    </h1>
+    <p class="hero-sub">traduzindo a sua personalidade em cada detalhe — com aquele toque que faz todo mundo perguntar: amiga, onde você comprou?</p>
+    <div class="hero-ctas">
+      <a href="#servicos" class="btn-yellow">Ver serviços</a>
+      <a href="#contato" class="btn-outline-white">Falar no WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Joias Selecionadas</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">@yaballin</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Joias Selecionadas</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">@yaballin</span><span class="marquee-sep">✦</span>
+  </div>
+</div>
+
+<!-- POR QUE -->
+<section class="why-section">
+  <p class="section-label">Por que investir?</p>
+  <h2 class="why-title fade-up">Por que<br>investir em<br>um stylist?</h2>
+  <div class="why-grid">
+    <div class="why-card fade-up d1">
+      <div class="why-card-num">01</div>
+      <h3 class="why-card-title">Olhar Certeiro</h3>
+      <p class="why-card-desc">Enxergue combinações que valorizam seu corpo e sua energia — sem achismos.</p>
+    </div>
+    <div class="why-card fade-up d2">
+      <div class="why-card-num">02</div>
+      <h3 class="why-card-title">Economia de Tempo</h3>
+      <p class="why-card-desc">Looks prontos e sem estresse. Você abre o guarda-roupa e sabe exatamente o que colocar.</p>
+    </div>
+    <div class="why-card fade-up d3">
+      <div class="why-card-num">03</div>
+      <h3 class="why-card-title">Autenticidade</h3>
+      <p class="why-card-desc">Roupas que refletem quem você é, não só tendências. Seu estilo, potencializado.</p>
+    </div>
+    <div class="why-card fade-up d4">
+      <div class="why-card-num">04</div>
+      <h3 class="why-card-title">Impacto Imediato</h3>
+      <p class="why-card-desc">Entre em qualquer lugar e seja lembrada. A roupa certa muda a forma como o mundo te vê.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section class="manifesto">
+  <h2 class="manifesto-quote fade-up">
+    BALLIN BY YA:<br>
+    traduzindo a sua <span class="hl">personalidade</span><br>
+    em cada <span class="hl2">detalhe.</span>
+  </h2>
+  <p class="manifesto-sub">com aquele toque que faz todo mundo perguntar: amiga, onde você comprou?</p>
+</section>
+
+<!-- FORMS -->
+<section class="forms-section" id="forms">
+  <div>
+    <h2 class="forms-text fade-up">Pra começar,<br>me fala do<br>seu estilo</h2>
+    <p class="forms-sub">Responda o forms e eu entro em contato!</p>
+  </div>
+  <!-- Troque o href pelo link do seu Google Forms -->
+  <a href="#" class="btn-forms" target="_blank" rel="noopener">Preencher o forms →</a>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="servicos">
+  <div class="services-header">
+    <div>
+      <p class="section-label">Serviços</p>
+      <h2 class="services-title fade-up">Os meus<br><span>serviços</span></h2>
+    </div>
+    <p style="font-size:0.78rem;color:#888;max-width:220px;font-weight:300;line-height:1.6;">*Deslocamento já embutido em todos os preços. Pagamento: Pix ou transferência.</p>
+  </div>
+
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-tag">Compras</div>
+      <h3 class="service-name">Personal<br>Shopper</h3>
+      <p class="service-desc">Acompanhamento em compras ou lista personalizada com links + direcionamento para renovar peças.</p>
+      <ul class="service-includes">
+        <li>Dicas de uso e combinações práticas durante a sessão</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">1h ou 2h</p>
+          <p class="service-note">*deslocamento incluso</p>
+        </div>
+        <div style="text-align:right">
+          <p class="service-price-alt">R$ 150 <span style="color:#aaa;font-size:0.75rem">(1h)</span></p>
+          <p class="service-price">R$ 280 <span style="color:#aaa;font-size:0.75rem">(2h)</span></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-tag">Looks</div>
+      <h3 class="service-name">Montagem<br>de Looks</h3>
+      <p class="service-desc">Sessão presencial para montar até 02 looks com o que você já tem. Inclui fotos e sugestões rápidas de uso.</p>
+      <ul class="service-includes">
+        <li>Criação de até 02 looks</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">2h</p>
+          <p class="service-note">*deslocamento incluso</p>
+        </div>
+        <p class="service-price">R$ 230</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-tag">Viagem</div>
+      <h3 class="service-name">Mala de<br>Viagem</h3>
+      <p class="service-desc">Looks coordenados para uma viagem de até 7 dias. Inclui sugestão de peças extras e acessórios.</p>
+      <ul class="service-includes">
+        <li>Looks completos para 7 dias</li>
+        <li>Sugestão de peças extras e acessórios</li>
+        <li>Fotos dos looks organizados</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">2h30 a 3h</p>
+          <p class="service-note">*deslocamento incluso</p>
+        </div>
+        <p class="service-price">R$ 350</p>
+      </div>
+    </div>
+
+    <div class="service-card" style="border-top: 4px solid var(--blue);">
+      <div class="service-tag" style="background:var(--red);">Mais Popular</div>
+      <h3 class="service-name">Pacote<br>Mini-Cápsula</h3>
+      <p class="service-desc">Montagem de até 15 looks combináveis com 10–12 peças. Ideal para quem quer uma base de guarda-roupa funcional.</p>
+      <ul class="service-includes">
+        <li>Criação de até 15 looks</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">3h</p>
+          <p class="service-note">*deslocamento incluso</p>
+        </div>
+        <p class="service-price">R$ 450</p>
+      </div>
+    </div>
+
+    <div class="service-card">
+      <div class="service-tag">Mensal</div>
+      <h3 class="service-name">Pacote<br>Mensal</h3>
+      <p class="service-desc">Acompanhamento ao longo do mês, com até 3 encontros + fotos dos looks organizados.</p>
+      <ul class="service-includes">
+        <li>3 sessões presenciais</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">3× 2h</p>
+          <p class="service-note">*deslocamento incluso</p>
+        </div>
+        <p class="service-price">R$ 650</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- IMPORTANT -->
+<section class="important-section">
+  <h2 class="important-title">Importante:</h2>
+  <div class="important-grid">
+    <div class="important-item fade-up">
+      <span class="important-num">01</span>
+      <p class="important-text">O agendamento deve ser feito com, no mínimo, 4 dias de antecedência.</p>
+    </div>
+    <div class="important-item fade-up d1">
+      <span class="important-num">02</span>
+      <p class="important-text">Para confirmar o atendimento, é necessário o pagamento de 50% do valor como sinal.</p>
+    </div>
+    <div class="important-item fade-up d2">
+      <span class="important-num">03</span>
+      <p class="important-text">Caso opte pelo aluguel de peças com o direcional da stylist, será cobrado um valor adicional referente às peças.</p>
+    </div>
+    <div class="important-item fade-up d3">
+      <span class="important-num">04</span>
+      <p class="important-text">Em caso de cancelamento com menos de 48h de antecedência, o sinal não será reembolsado.</p>
+    </div>
+    <div class="important-item fade-up d4">
+      <span class="important-num">05</span>
+      <p class="important-text">Formas de pagamento: Pix ou transferência bancária.</p>
+    </div>
+  </div>
+</section>
+
+<!-- JOIAS -->
+<section class="joias-section" id="joias">
+  <div class="joias-header">
+    <div>
+      <p class="section-label">Catálogo</p>
+      <h2 class="joias-title fade-up">Joias<br><span>selecionadas</span></h2>
+    </div>
+    <p class="joias-note">Peças garimpadas com muito olhar — para finalizar qualquer look com personalidade.</p>
+  </div>
+
+  <div class="joias-grid">
+    <div class="joia-card fade-up">
+      <div class="joia-img">
+        <div class="joia-img-label">foto da peça</div>
+        <span class="joia-badge novo">Novo</span>
+      </div>
+      <h4 class="joia-name">Nome da Peça</h4>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+    </div>
+    <div class="joia-card fade-up d1">
+      <div class="joia-img">
+        <div class="joia-img-label">foto da peça</div>
+        <span class="joia-badge">Destaque</span>
+      </div>
+      <h4 class="joia-name">Nome da Peça</h4>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+    </div>
+    <div class="joia-card fade-up d2">
+      <div class="joia-img">
+        <div class="joia-img-label">foto da peça</div>
+      </div>
+      <h4 class="joia-name">Nome da Peça</h4>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+    </div>
+    <div class="joia-card fade-up d3">
+      <div class="joia-img">
+        <div class="joia-img-label">foto da peça</div>
+        <span class="joia-badge ultimo">Último</span>
+      </div>
+      <h4 class="joia-name">Nome da Peça</h4>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+    </div>
+  </div>
+
+  <p style="text-align:center;margin-top:2rem;font-size:0.78rem;color:#999;font-weight:300;">Mais peças disponíveis via Instagram e WhatsApp. Estoque rotativo!</p>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contato">
+  <div class="contact-bg" aria-hidden="true">
+    <span class="contact-bg-text">BALLIN BY YA</span>
+  </div>
+  <div class="contact-inner">
+    <p class="contact-eyebrow">Vamos trabalhar juntas?</p>
+    <h2 class="contact-title fade-up">TE ENCONTRO<br>NA PRÓXIMA<br>SESSÃO</h2>
+    <span class="contact-tagline">BALLIN BY YA</span>
+    <div class="contact-links">
+      <!-- Troque o número pelo seu -->
+      <a href="https://wa.me/5511973523201" class="btn-contact-wpp" target="_blank" rel="noopener">WhatsApp →</a>
+      <a href="https://instagram.com/yaballin" class="btn-contact-ig" target="_blank" rel="noopener">@yaballin</a>
+      <a href="https://tiktok.com/@yaballin" class="btn-contact-ig" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p class="contact-info">11 97352-3201 · São Paulo, SP</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">BALLIN <span>BY YA</span></span>
+  <span class="footer-copy">© 2026 Ballin by Ya · Todos os direitos reservados</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
