@@ -302,39 +302,6 @@ nav {
   transition: color 0.2s;
 }
 
-/* MANIFESTO */
-.manifesto {
-  background: var(--blue);
-  padding: 5rem 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  border-bottom: 3px solid var(--black);
-}
-
-.manifesto-quote {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: clamp(1.8rem, 4vw, 3.5rem);
-  text-transform: uppercase;
-  line-height: 1.05;
-  color: var(--offwhite);
-  max-width: 900px;
-  margin: 0 auto 1.5rem;
-}
-
-.manifesto-quote .hl { color: var(--red); }
-.manifesto-quote .hl2 { color: var(--yellow); }
-
-.manifesto-sub {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(240,235,224,0.5);
-}
-
 /* TAPE */
 .tape {
   background: var(--yellow);
@@ -1073,7 +1040,13 @@ footer {
 <!-- POR QUE -->
 <section class="why-section">
   <p class="section-label">Styling by Ya</p>
-  <h2 class="why-title fade-up">Por que<br>investir em<br>um stylist?</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;margin-bottom:3rem;">
+  <h2 class="why-title fade-up" style="margin-bottom:0;">Por que<br>investir em<br>um stylist?</h2>
+  <div style="background:var(--blue);padding:2.5rem;">
+    <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.4rem,3vw,2.2rem);text-transform:uppercase;color:var(--offwhite);line-height:1.05;margin-bottom:0.75rem;">BALLIN BY YA:<br>traduzindo a sua <span style="color:var(--red);">personalidade</span><br>em cada <span style="color:var(--yellow);">detalhe.</span></h3>
+    <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,235,224,0.5);">com aquele toque que faz todo mundo perguntar: amiga, onde você comprou?</p>
+  </div>
+</div> 
   <div class="why-grid">
     <div class="why-card fade-up d1">
       <div class="why-card-num">01</div>
