@@ -1412,6 +1412,44 @@ footer {
 </section>
 <script async src="https://www.instagram.com/embed.js"></script>
   
+<!-- MODAL -->
+<div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+    <div id="modal-img-wrap"></div>
+    <div class="modal-body">
+      <span class="modal-tag" id="modal-tag"></span>
+      <h3 class="modal-name" id="modal-name"></h3>
+      <p class="modal-mat" id="modal-mat"></p>
+      <p class="modal-price" id="modal-price"></p>
+      <a class="modal-btn" id="modal-btn" target="_blank" rel="noopener">Quero essa peça →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal(name, mat, price, tag, imgSrc) {
+  document.getElementById('modal-name').textContent = name;
+  document.getElementById('modal-mat').textContent = mat;
+  document.getElementById('modal-price').textContent = price;
+  document.getElementById('modal-tag').textContent = tag || 'Disponível';
+  const wrap = document.getElementById('modal-img-wrap');
+  wrap.innerHTML = imgSrc
+    ? `<img class="modal-img" src="${imgSrc}" alt="${name}">`
+    : `<div class="modal-img-placeholder"></div>`;
+  const encoded = encodeURIComponent(name);
+  document.getElementById('modal-btn').href =
+    `https://tally.so/r/VLN9Gl?Peça+de+interesse=${encoded}`;
+  document.getElementById('modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+  
 <!-- CONTACT -->
 <section class="contact-section" id="contato">
   <div class="contact-bg" aria-hidden="true">
