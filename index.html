@@ -1360,6 +1360,73 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- LOOKBOOK -->
+<section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);overflow:hidden;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;">
+    <span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>
+    Styling by Ya
+  </p>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">
+    CADA LOOK,<br><span style="color:var(--yellow);">UMA VERSÃO SUA</span>
+  </h2>
+
+  <div style="display:flex;align-items:center;justify-content:center;gap:2rem;flex-wrap:wrap;">
+    <button onclick="lookPrev()" style="background:none;border:2px solid var(--offwhite);color:var(--offwhite);width:48px;height:48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;cursor:pointer;transition:background 0.15s,color 0.15s;flex-shrink:0;" onmouseover="this.style.background='var(--blue)';this.style.borderColor='var(--blue)'" onmouseout="this.style.background='none';this.style.borderColor='var(--offwhite)'">←</button>
+
+    <div style="display:flex;align-items:flex-end;gap:3rem;flex-wrap:wrap;justify-content:center;">
+      <!-- BONECA -->
+      <div style="position:relative;width:280px;height:480px;flex-shrink:0;">
+        <img id="look-outfit" src="look1.png" alt="look" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom;transition:opacity 0.4s ease;z-index:2;">
+        <img src="yaballin-base.png" alt="Ya" style="position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:bottom;z-index:1;opacity:0;">
+      </div>
+
+      <!-- INFO DO LOOK -->
+      <div style="max-width:240px;padding-bottom:2rem;">
+        <div id="look-num" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:5rem;color:rgba(240,235,224,0.06);line-height:1;margin-bottom:0.5rem;">01</div>
+        <div id="look-tag" style="display:inline-block;background:var(--yellow);color:var(--black);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.65rem;letter-spacing:0.16em;text-transform:uppercase;padding:0.25rem 0.65rem;margin-bottom:1rem;">Statement</div>
+        <div id="look-name" style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:2rem;text-transform:uppercase;color:var(--offwhite);line-height:1.05;margin-bottom:0.75rem;">Top Gatinhos<br>+ Cargo</div>
+        <div id="look-desc" style="font-family:'Barlow',sans-serif;font-size:0.85rem;font-weight:300;color:rgba(240,235,224,0.55);line-height:1.65;">Atitude máxima. Top tube com print inesperado, calça cargo militar e mãos que falam por si sós.</div>
+        <div style="margin-top:1.5rem;display:flex;gap:8px;" id="look-dots">
+          <div onclick="goLook(0)" style="width:8px;height:8px;background:var(--blue);cursor:pointer;transition:background 0.15s;"></div>
+          <div onclick="goLook(1)" style="width:8px;height:8px;border:2px solid rgba(240,235,224,0.3);cursor:pointer;transition:background 0.15s;"></div>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="lookNext()" style="background:none;border:2px solid var(--offwhite);color:var(--offwhite);width:48px;height:48px;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.4rem;cursor:pointer;transition:background 0.15s,color 0.15s;flex-shrink:0;" onmouseover="this.style.background='var(--blue)';this.style.borderColor='var(--blue)'" onmouseout="this.style.background='none';this.style.borderColor='var(--offwhite)'">→</button>
+  </div>
+</section>
+
+<script>
+const looksData = [
+  { num:'01', tag:'Statement', name:'Top Gatinhos\n+ Cargo', desc:'Atitude máxima. Top tube com print inesperado, calça cargo militar e mãos que falam por si sós.', img:'look1.png' },
+  { num:'02', tag:'Boho Power', name:'Blazer + Bota\n+ Calça Branca', desc:'Elegância desconstruída. Blazer oversized, calça wide-leg, bota de cano alto e bolsa vintage. Referência viva.', img:'look2.png' }
+];
+
+let lookCurrent = 0;
+
+function goLook(idx) {
+  lookCurrent = idx;
+  const l = looksData[lookCurrent];
+  document.getElementById('look-outfit').style.opacity = '0';
+  setTimeout(() => {
+    document.getElementById('look-outfit').src = l.img;
+    document.getElementById('look-outfit').style.opacity = '1';
+  }, 200);
+  document.getElementById('look-num').textContent = l.num;
+  document.getElementById('look-tag').textContent = l.tag;
+  document.getElementById('look-name').innerHTML = l.name.replace('\n','<br>');
+  document.getElementById('look-desc').textContent = l.desc;
+  document.querySelectorAll('#look-dots div').forEach((d,i) => {
+    d.style.background = i === lookCurrent ? 'var(--blue)' : 'none';
+    d.style.border = i === lookCurrent ? 'none' : '2px solid rgba(240,235,224,0.3)';
+  });
+}
+
+function lookNext() { goLook((lookCurrent + 1) % looksData.length); }
+function lookPrev() { goLook((lookCurrent - 1 + looksData.length) % looksData.length); }
+</script>  
   
 <!-- TIKTOK -->
 <section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
