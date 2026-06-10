@@ -1448,21 +1448,43 @@ footer {
 </div>
 
 <script>
-function openModal(name, mat, price, tag, imgSrc) {
+let modalPhotos = [];
+let modalPhotoIdx = 0;  
+function openModal(name, mat, price, tag, photos) {
+  modalPhotos = Array.isArray(photos) ? photos : [photos];
+  modalPhotoIdx = 0;
   document.getElementById('modal-name').textContent = name;
   document.getElementById('modal-mat').textContent = mat;
   document.getElementById('modal-price').textContent = price;
   document.getElementById('modal-tag').textContent = tag || 'Disponível';
-  const wrap = document.getElementById('modal-img-wrap');
-  wrap.innerHTML = imgSrc
-    ? `<img class="modal-img" src="${imgSrc}" alt="${name}">`
-    : `<div class="modal-img-placeholder"></div>`;
+  renderModalPhoto();
   const encoded = encodeURIComponent(name);
-  document.getElementById('modal-btn').href =
-    `https://tally.so/r/VLN9Gl?Peça+de+interesse=${encoded}`;
+  document.getElementById('modal-btn').href = `https://tally.so/r/VLN9Gl?Peça+de+interesse=${encoded}`;
   document.getElementById('modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
+
+function renderModalPhoto() {
+  const wrap = document.getElementById('modal-img-wrap');
+  const hasMultiple = modalPhotos.length > 1;
+  wrap.innerHTML = `
+    <div style="position:relative;">
+      <img class="modal-img" src="${modalPhotos[modalPhotoIdx]}" alt="foto">
+      ${hasMultiple ? `
+        <button onclick="modalPhotoNav(-1)" style="position:absolute;left:8px;top:50%;transform:translateY(-50%);background:rgba(10,10,10,0.6);color:#F0EBE0;border:none;width:32px;height:32px;font-size:1rem;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;">←</button>
+        <button onclick="modalPhotoNav(1)" style="position:absolute;right:8px;top:50%;transform:translateY(-50%);background:rgba(10,10,10,0.6);color:#F0EBE0;border:none;width:32px;height:32px;font-size:1rem;cursor:pointer;font-family:'Barlow Condensed',sans-serif;font-weight:700;">→</button>
+        <div style="position:absolute;bottom:8px;left:50%;transform:translateX(-50%);display:flex;gap:5px;">
+          ${modalPhotos.map((_,i) => `<div onclick="modalPhotoNav(${i - modalPhotoIdx})" style="width:6px;height:6px;background:${i===modalPhotoIdx?'#2D00F7':'rgba(240,235,224,0.4)'};cursor:pointer;"></div>`).join('')}
+        </div>
+      ` : ''}
+    </div>`;
+}
+
+function modalPhotoNav(dir) {
+  modalPhotoIdx = (modalPhotoIdx + dir + modalPhotos.length) % modalPhotos.length;
+  renderModalPhoto();
+}
+
 function closeModal() {
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
