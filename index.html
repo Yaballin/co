@@ -34,139 +34,307 @@ nav {
   display: flex; justify-content: space-between; align-items: center;
   padding: 0.9rem 2rem;
 }
+
 .nav-logo {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900; font-size: 1.4rem;
-  letter-spacing: 0.06em; color: var(--offwhite); text-decoration: none;
+  font-weight: 900;
+  font-size: 1.4rem;
+  letter-spacing: 0.06em;
+  color: var(--offwhite);
+  text-decoration: none;
 }
+
 .nav-logo span { color: var(--yellow); }
+
 .nav-links { display: flex; gap: 2rem; list-style: none; }
+
 .nav-links a {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase;
-  color: rgba(240,235,224,0.7); text-decoration: none; transition: color 0.15s;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.7);
+  text-decoration: none;
+  transition: color 0.15s;
 }
+
 .nav-links a:hover { color: var(--yellow); }
 
 /* HERO */
 .hero {
-  min-height: 100vh; background: var(--blue);
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 8rem 2rem 3rem; position: relative; overflow: hidden;
+  min-height: 100vh;
+  background: var(--blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 8rem 2rem 3rem;
+  position: relative;
+  overflow: hidden;
 }
+
 .hero-bg-text {
-  position: absolute; top: 50%; left: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   transform: translate(-50%, -50%);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-  font-size: clamp(8rem, 20vw, 18rem); color: rgba(255,255,255,0.04);
-  white-space: nowrap; user-select: none; letter-spacing: -0.02em; line-height: 1;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(8rem, 20vw, 18rem);
+  color: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  user-select: none;
+  letter-spacing: -0.02em;
+  line-height: 1;
 }
+
+.hero-img-placeholder {
+  position: absolute;
+  top: 80px; right: 2rem;
+  width: clamp(220px, 35vw, 420px);
+  height: clamp(300px, 55vh, 600px);
+  border: 1px dashed rgba(240,235,224,0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.hero-img-placeholder span {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(240,235,224,0.25);
+}
+
 .hero-content { position: relative; z-index: 2; max-width: 700px; }
+
 .hero-eyebrow {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase;
-  color: var(--yellow); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.75rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+  display: flex; align-items: center; gap: 0.75rem;
 }
-.hero-eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--yellow); }
+
+.hero-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 24px; height: 2px;
+  background: var(--yellow);
+}
+
 .hero-title {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 900;
-  font-size: clamp(3.5rem, 10vw, 8rem); line-height: 0.92;
-  color: var(--offwhite); text-transform: uppercase; letter-spacing: -0.01em; margin-bottom: 1.5rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3.5rem, 10vw, 8rem);
+  line-height: 0.92;
+  color: var(--offwhite);
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.5rem;
 }
+
 .hero-title .accent { color: var(--red); }
+
 .hero-sub {
-  font-size: 1rem; font-weight: 300; color: rgba(240,235,224,0.7);
-  line-height: 1.6; max-width: 400px; margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(240,235,224,0.7);
+  line-height: 1.6;
+  max-width: 400px;
+  margin-bottom: 2rem;
 }
+
 .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
 
 .btn-yellow {
-  display: inline-block; padding: 0.85rem 2rem; background: var(--yellow); color: var(--black);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.85rem;
-  letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
   transition: transform 0.15s, background 0.15s;
 }
+
 .btn-yellow:hover { transform: translate(-2px,-2px); background: #d4ff00; }
+
 .btn-outline-white {
-  display: inline-block; padding: 0.85rem 2rem; background: transparent; color: var(--offwhite);
-  border: 2px solid var(--offwhite); font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none;
+  display: inline-block;
+  padding: 0.85rem 2rem;
+  background: transparent;
+  color: var(--offwhite);
+  border: 2px solid var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
   transition: background 0.15s, color 0.15s;
 }
+
 .btn-outline-white:hover { background: var(--offwhite); color: var(--blue); }
 
 /* MARQUEE */
 .marquee-wrap {
-  background: var(--yellow); padding: 0.75rem 0; overflow: hidden; white-space: nowrap;
-  border-top: 3px solid var(--black); border-bottom: 3px solid var(--black);
-}
-.marquee-track { display: inline-block; animation: marquee 22s linear infinite; }
-.marquee-item {
-  display: inline-block; font-family: 'Barlow Condensed', sans-serif; font-weight: 700;
-  font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--black); margin: 0 1.5rem;
-}
-.marquee-sep { margin: 0 0.5rem; color: var(--blue); font-weight: 900; }
-@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-
-/* SECTION LABEL */
-.section-label {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.7rem;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue);
-  margin-bottom: 2rem; display: flex; align-items: center; gap: 0.75rem;
-}
-.section-label::before { content: ''; width: 20px; height: 2px; background: var(--blue); }
-
-/* JOIAS */
-.joias-section { background: var(--offwhite); padding: 6rem 2rem; border-bottom: 3px solid var(--black); }
-.joias-header { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 3rem; flex-wrap: wrap; gap: 1rem; }
-.joias-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.95; color: var(--black); }
-.joias-title span { color: var(--blue); }
-.joias-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; }
-.joia-card { cursor: pointer; position: relative; }
-.joia-img {
-  aspect-ratio: 3/4; background: #e5dfd0; border: 2px solid var(--black);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 0.5rem; margin-bottom: 0.85rem; position: relative; overflow: hidden;
-  transition: border-color 0.2s; cursor: pointer;
-}
-.joia-img::after {
-  content: '🔍'; position: absolute; top: 50%; left: 50%;
-  transform: translate(-50%, -50%); font-size: 1.5rem; opacity: 0;
-  transition: opacity 0.2s; pointer-events: none;
-}
-.joia-card:hover .joia-img::after { opacity: 1; }
-.joia-card:hover .joia-img { border-color: var(--blue); }
-.joia-img-foto { width: 100%; height: 100%; object-fit: contain; }
-.joia-badge {
-  position: absolute; top: 0.6rem; left: 0.6rem; background: var(--blue); color: var(--offwhite);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.6rem;
-  letter-spacing: 0.14em; text-transform: uppercase; padding: 0.2rem 0.55rem;
-}
-.joia-badge.novo { background: var(--red); }
-.joia-badge.ultimo { background: var(--black); }
-.joia-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--black); margin-bottom: 0.2rem; }
-.joia-meta { display: flex; justify-content: space-between; align-items: center; }
-.joia-mat { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: #999; }
-.joia-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.1rem; color: var(--blue); }
-
-/* ============================
-   STYLING SECTION — tabs + carrossel + mini importante
-   ============================ */
-.styling-section {
-  background: var(--offwhite);
+  background: var(--yellow);
+  padding: 0.75rem 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-top: 3px solid var(--black);
   border-bottom: 3px solid var(--black);
 }
 
-/* HEADER */
-.styling-header {
-  padding: 3.5rem 2rem 0;
+.marquee-track {
+  display: inline-block;
+  animation: marquee 22s linear infinite;
+}
+
+.marquee-item {
+  display: inline-block;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin: 0 1.5rem;
+}
+
+.marquee-sep { margin: 0 0.5rem; color: var(--blue); font-weight: 900; }
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* POR QUE STYLIST */
+.why-section {
+  background: var(--offwhite);
+  padding: 0;
+  border-bottom: 3px solid var(--black);
+  overflow: hidden;
+}
+
+.section-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--blue);
+  margin-bottom: 2rem;
+  display: flex; align-items: center; gap: 0.75rem;
+}
+
+.section-label::before {
+  content: '';
+  width: 20px; height: 2px;
+  background: var(--blue);
+}
+
+.why-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--blue);
+  margin-bottom: 3rem;
+  max-width: 700px;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0;
+  border: 2px solid var(--black);
+}
+
+.why-card {
+  padding: 2rem;
+  border-right: 2px solid var(--black);
+  transition: background 0.2s;
+}
+
+.why-card:last-child { border-right: none; }
+.why-card:hover { background: var(--blue); color: var(--offwhite); }
+.why-card:hover .why-card-num { color: var(--yellow); }
+.why-card:hover .why-card-title { color: var(--offwhite); }
+.why-card:hover .why-card-desc { color: rgba(240,235,224,0.75); }
+
+.why-card-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
+  color: rgba(0,0,0,0.1);
+  line-height: 1;
+  margin-bottom: 1rem;
+  transition: color 0.2s;
+}
+
+.why-card-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--black);
+  margin-bottom: 0.5rem;
+  transition: color 0.2s;
+}
+
+.why-card-desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #444;
+  transition: color 0.2s;
+}
+
+/* TAPE */
+.tape {
+  background: var(--yellow);
+  padding: 0.4rem 2rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  transform: rotate(-1deg);
+  display: inline-block;
+  margin: 0.5rem 0;
+}
+
+/* SERVICES */
+.services-section {
+  background: var(--offwhite);
+  padding: 6rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.services-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 3rem;
   flex-wrap: wrap;
   gap: 1rem;
 }
-.styling-title {
+
+.services-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-weight: 900;
   font-size: clamp(2.5rem, 6vw, 5rem);
@@ -174,237 +342,647 @@ nav {
   line-height: 0.95;
   color: var(--black);
 }
-.styling-title span { color: var(--blue); }
 
-/* TABS "POR QUE" */
-.why-tabs {
-  display: flex;
+.services-title span { color: var(--blue); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 0;
   border: 2px solid var(--black);
-  margin: 2rem 2rem 0;
-  overflow: hidden;
 }
-.why-tab-btn {
-  flex: 1;
-  padding: 0.7rem 1rem;
-  background: transparent;
-  border: none;
-  border-right: 2px solid var(--black);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700;
-  font-size: 0.72rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: #888;
-  cursor: pointer;
-  transition: background 0.15s, color 0.15s;
-}
-.why-tab-btn:last-child { border-right: none; }
-.why-tab-btn.active { background: var(--blue); color: var(--offwhite); }
-.why-tab-btn:not(.active):hover { background: #f0ebe0; color: var(--black); }
 
-.why-tab-content {
-  display: none;
-  padding: 1.25rem 2rem;
-  border-left: 2px solid var(--black);
+.service-card {
+  padding: 2rem 1.75rem;
   border-right: 2px solid var(--black);
   border-bottom: 2px solid var(--black);
-  margin: 0 2rem;
-  background: var(--offwhite);
+  position: relative;
+  overflow: hidden;
+  transition: background 0.2s;
 }
-.why-tab-content.active { display: flex; align-items: flex-start; gap: 1rem; }
-.why-tab-num {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900; font-size: 2.5rem;
-  color: rgba(0,0,0,0.08); line-height: 1; flex-shrink: 0;
-}
-.why-tab-body {}
-.why-tab-title {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700; font-size: 1rem;
-  text-transform: uppercase; letter-spacing: 0.06em;
-  color: var(--black); margin-bottom: 0.3rem;
-}
-.why-tab-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.6; color: #555; }
 
-/* CARROSSEL DE SERVIÇOS */
-.services-carousel-wrap {
-  padding: 2rem 2rem 0;
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.25s;
+}
+
+.service-card:hover::before { transform: scaleX(1); }
+.service-card:hover { background: #f8f4e8; }
+
+.service-tag {
+  display: inline-block;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.65rem;
+  margin-bottom: 1.25rem;
+}
+
+.service-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  line-height: 1.05;
+  color: var(--black);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.02em;
+}
+
+.service-desc {
+  font-size: 0.82rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.service-includes {
+  margin-bottom: 1.25rem;
+  display: flex; flex-direction: column; gap: 0.3rem;
+}
+
+.service-includes li {
+  font-size: 0.78rem;
+  color: #444;
+  list-style: none;
+  padding-left: 1rem;
   position: relative;
 }
-.services-carousel-header {
+
+.service-includes li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--blue);
+  font-weight: 700;
+}
+
+.service-footer {
+  border-top: 1px solid rgba(0,0,0,0.12);
+  padding-top: 1rem;
+  display: flex; justify-content: space-between; align-items: flex-end;
+}
+
+.service-duration {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888;
+}
+
+.service-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: var(--blue);
+}
+
+.service-price-alt {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--blue);
+}
+
+.service-note {
+  font-size: 0.68rem;
+  color: #999;
+  margin-top: 0.5rem;
+  font-style: italic;
+}
+
+/* IMPORTANT */
+.important-section {
+  background: var(--black);
+  padding: 4rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.important-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--red);
+  margin-bottom: 2.5rem;
+}
+
+.important-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.important-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.important-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--blue);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.important-text {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(240,235,224,0.75);
+  padding-top: 0.3rem;
+}
+
+/* JOIAS */
+.joias-section {
+  background: var(--offwhite);
+  padding: 6rem 2rem;
+  border-bottom: 3px solid var(--black);
+}
+
+.joias-header {
+  display: flex; align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.joias-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  text-transform: uppercase;
+  line-height: 0.95;
+  color: var(--black);
+}
+
+.joias-title span { color: var(--blue); }
+
+.joias-note {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: #888;
+  max-width: 260px;
+  line-height: 1.6;
+  padding-top: 0.5rem;
+}
+
+.joias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.joia-card {
+  cursor: pointer;
+  position: relative;
+}
+
+.joia-img {
+  aspect-ratio: 3/4;
+  background: #e5dfd0;
+  border: 2px solid var(--black);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.85rem;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+  cursor: pointer;
+}
+.joia-img-foto {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.joia-card:hover .joia-img { .joia-img::after {
+  content: '🔍';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+}
+
+.joia-card:hover .joia-img::after {
+  opacity: 1;
+} border-color: var(--blue); }
+
+.joia-img-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.25);
+}
+
+.joia-badge {
+  position: absolute;
+  top: 0.6rem; left: 0.6rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.6rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+}
+
+.joia-badge.novo { background: var(--red); }
+.joia-badge.ultimo { background: var(--black); }
+
+.joia-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--black);
+  margin-bottom: 0.2rem;
+}
+
+.joia-meta {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.25rem;
 }
-.services-carousel-label {
+
+.joia-mat {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.joia-price {
   font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 700; font-size: 0.7rem;
-  letter-spacing: 0.22em; text-transform: uppercase; color: var(--blue);
-  display: flex; align-items: center; gap: 0.75rem;
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: var(--blue);
 }
-.services-carousel-label::before { content: ''; width: 20px; height: 2px; background: var(--blue); }
-.services-carousel-nav { display: flex; gap: 0.5rem; }
-.sc-btn {
-  background: none; border: 2px solid var(--black);
-  width: 36px; height: 36px;
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem;
-  cursor: pointer; transition: background 0.15s, color 0.15s, border-color 0.15s;
-  color: var(--black);
-}
-.sc-btn:hover { background: var(--blue); color: var(--offwhite); border-color: var(--blue); }
-
-.services-track-outer {
-  overflow: hidden;
-  border: 2px solid var(--black);
-}
-.services-track {
-  display: flex;
-  transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-.service-card-slide {
-  min-width: calc(33.333% - 0px);
-  flex-shrink: 0;
-  padding: 2rem 1.75rem;
-  border-right: 2px solid var(--black);
-  position: relative;
-  overflow: hidden;
-  background: var(--offwhite);
-  transition: background 0.2s;
-}
-.service-card-slide::before {
-  content: ''; position: absolute; top: 0; left: 0;
-  width: 100%; height: 4px; background: var(--blue);
-  transform: scaleX(0); transform-origin: left; transition: transform 0.25s;
-}
-.service-card-slide:hover::before { transform: scaleX(1); }
-.service-card-slide:hover { background: #f8f4e8; }
-
-.service-tag {
-  display: inline-block; background: var(--blue); color: var(--offwhite);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.65rem;
-  letter-spacing: 0.16em; text-transform: uppercase; padding: 0.25rem 0.65rem; margin-bottom: 1.25rem;
-}
-.service-name {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.5rem;
-  text-transform: uppercase; line-height: 1.05; color: var(--black); margin-bottom: 0.75rem; letter-spacing: 0.02em;
-}
-.service-desc { font-size: 0.82rem; font-weight: 300; line-height: 1.65; color: #555; margin-bottom: 1rem; }
-.service-includes { margin-bottom: 1.25rem; display: flex; flex-direction: column; gap: 0.3rem; }
-.service-includes li { font-size: 0.78rem; color: #444; list-style: none; padding-left: 1rem; position: relative; }
-.service-includes li::before { content: '—'; position: absolute; left: 0; color: var(--blue); font-weight: 700; }
-.service-footer { border-top: 1px solid rgba(0,0,0,0.12); padding-top: 1rem; display: flex; justify-content: space-between; align-items: flex-end; }
-.service-duration { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: #888; }
-
-.sc-progress {
-  display: flex; gap: 4px; margin-top: 1rem; padding: 0 2rem;
-}
-.sc-dot {
-  height: 3px; flex: 1; background: rgba(0,0,0,0.12); cursor: pointer; transition: background 0.2s;
-}
-.sc-dot.active { background: var(--blue); }
-
-/* MINI IMPORTANTE */
-.mini-importante {
-  padding: 1.5rem 2rem 2rem;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1rem;
-  border-top: 2px solid var(--black);
-  margin-top: 2rem;
-}
-.mini-item { display: flex; gap: 0.6rem; align-items: flex-start; }
-.mini-num {
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.2rem;
-  color: var(--blue); line-height: 1; flex-shrink: 0;
-}
-.mini-text { font-size: 0.72rem; font-weight: 300; line-height: 1.55; color: #777; padding-top: 0.1rem; }
-
-.btn-forms {
-  display: inline-block; padding: 1rem 2.5rem; background: var(--blue); color: var(--offwhite);
-  font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem;
-  letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none;
-  border: 2px solid var(--blue); white-space: nowrap; transition: background 0.15s, color 0.15s; flex-shrink: 0;
-}
-.btn-forms:hover { background: var(--black); border-color: var(--black); }
-
-/* POR QUE / MANIFESTO SPLIT */
-.why-section { background: var(--offwhite); padding: 0; border-bottom: 3px solid var(--black); overflow: hidden; }
-.why-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(2.5rem, 6vw, 5rem); text-transform: uppercase; line-height: 0.95; color: var(--blue); margin-bottom: 3rem; max-width: 700px; }
-.why-card { padding: 2rem; border-right: 2px solid var(--black); transition: background 0.2s; }
-.why-card:last-child { border-right: none; }
-.why-card:hover { background: var(--blue); color: var(--offwhite); }
-.why-card:hover .why-card-num { color: var(--yellow); }
-.why-card:hover .why-card-title { color: var(--offwhite); }
-.why-card:hover .why-card-desc { color: rgba(240,235,224,0.75); }
-.why-card-num { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 3rem; color: rgba(0,0,0,0.1); line-height: 1; margin-bottom: 1rem; transition: color 0.2s; }
-.why-card-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.1rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--black); margin-bottom: 0.5rem; transition: color 0.2s; }
-.why-card-desc { font-size: 0.85rem; font-weight: 300; line-height: 1.6; color: #444; transition: color 0.2s; }
 
 /* CONTACT */
-.contact-section { background: var(--blue); padding: 6rem 2rem; text-align: center; position: relative; overflow: hidden; }
-.contact-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; overflow: hidden; }
-.contact-bg-text { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(6rem, 18vw, 16rem); color: rgba(255,255,255,0.04); white-space: nowrap; letter-spacing: -0.02em; user-select: none; }
+.contact-section {
+  background: var(--blue);
+  padding: 6rem 2rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.contact-bg-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(6rem, 18vw, 16rem);
+  color: rgba(255,255,255,0.04);
+  white-space: nowrap;
+  letter-spacing: -0.02em;
+  user-select: none;
+}
+
 .contact-inner { position: relative; z-index: 2; }
-.contact-title { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: clamp(3rem, 8vw, 7rem); text-transform: uppercase; color: var(--offwhite); line-height: 0.9; margin-bottom: 0.75rem; }
-.contact-tagline { display: inline-block; background: var(--yellow); padding: 0.35rem 1.25rem; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--black); margin-bottom: 2.5rem; transform: rotate(-0.8deg); }
-.contact-links { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; }
-.btn-contact-ig { display: inline-flex; align-items: center; gap: 0.5rem; padding: 1rem 2.5rem; background: transparent; color: var(--offwhite); border: 2px solid var(--offwhite); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.15s, color 0.15s; }
+
+.contact-eyebrow {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--yellow);
+  margin-bottom: 1rem;
+}
+
+.contact-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(3rem, 8vw, 7rem);
+  text-transform: uppercase;
+  color: var(--offwhite);
+  line-height: 0.9;
+  margin-bottom: 0.75rem;
+}
+
+.contact-tagline {
+  display: inline-block;
+  background: var(--yellow);
+  padding: 0.35rem 1.25rem;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--black);
+  margin-bottom: 2.5rem;
+  transform: rotate(-0.8deg);
+}
+
+.contact-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-contact-wpp {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: var(--yellow);
+  color: var(--black);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--yellow);
+  transition: transform 0.15s;
+}
+
+.btn-contact-wpp:hover { transform: translate(-2px,-2px); }
+
+.btn-contact-ig {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 1rem 2.5rem;
+  background: transparent;
+  color: var(--offwhite);
+  border: 2px solid var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.15s, color 0.15s;
+}
+
 .btn-contact-ig:hover { background: var(--offwhite); color: var(--blue); }
-.contact-info { font-size: 0.8rem; font-weight: 300; color: rgba(240,235,224,0.5); letter-spacing: 0.06em; }
+
+.contact-info {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: rgba(240,235,224,0.5);
+  letter-spacing: 0.06em;
+}
 
 /* FOOTER */
-footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-.footer-logo { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 1.1rem; letter-spacing: 0.06em; color: var(--offwhite); }
+footer {
+  background: var(--black);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-logo {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  color: var(--offwhite);
+}
+
 .footer-logo span { color: var(--yellow); }
-.footer-copy { font-size: 0.7rem; color: rgba(240,235,224,0.3); letter-spacing: 0.08em; }
+
+.footer-copy {
+  font-size: 0.7rem;
+  color: rgba(240,235,224,0.3);
+  letter-spacing: 0.08em;
+}
+
+/* FORMS LINK SECTION */
+.forms-section {
+  background: var(--yellow);
+  padding: 4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+  border-top: 3px solid var(--black);
+  border-bottom: 3px solid var(--black);
+}
+
+.forms-text {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 0.95;
+}
+
+.forms-sub {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: rgba(0,0,0,0.55);
+  margin-top: 0.5rem;
+}
+
+.btn-forms {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid var(--blue);
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+
+.btn-forms:hover { background: var(--black); border-color: var(--black); }
 
 /* FADE IN */
-.fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
-.fade-up.visible { opacity: 1; transform: translateY(0); }
-.d1 { transition-delay: 0.05s; } .d2 { transition-delay: 0.15s; } .d3 { transition-delay: 0.25s; } .d4 { transition-delay: 0.35s; }
-
-/* MODAL */
-.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(10,10,10,0.85); z-index: 999; align-items: center; justify-content: center; padding: 1.5rem; }
-.modal-overlay.open { display: flex; }
-.modal-box { background: var(--offwhite); max-width: 360px; width: 100%; position: relative; }
-.modal-img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #e5dfd0; display: block; }
-.modal-img-placeholder { width: 100%; aspect-ratio: 1/1; background: #e5dfd0; display: flex; align-items: center; justify-content: center; }
-.modal-body { padding: 1.75rem; }
-.modal-tag { font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 0.65rem; letter-spacing: 0.16em; text-transform: uppercase; background: var(--blue); color: var(--offwhite); padding: 0.25rem 0.65rem; display: inline-block; margin-bottom: 1rem; }
-.modal-name { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2rem; text-transform: uppercase; color: var(--black); line-height: 1; margin-bottom: 0.5rem; }
-.modal-mat { font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: #999; margin-bottom: 1rem; }
-.modal-price { font-family: 'Barlow Condensed', sans-serif; font-weight: 900; font-size: 2.5rem; color: var(--blue); margin-bottom: 1.5rem; line-height: 1; }
-.modal-btn { display: block; width: 100%; padding: 1rem; background: var(--blue); color: var(--offwhite); font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1rem; letter-spacing: 0.14em; text-transform: uppercase; text-decoration: none; text-align: center; border: none; cursor: pointer; transition: background 0.15s; }
-.modal-btn:hover { background: var(--black); }
-.modal-close { position: absolute; top: 0.75rem; right: 0.75rem; background: var(--black); color: var(--offwhite); border: none; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 1.2rem; width: 32px; height: 32px; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; }
-
-@media (max-width: 768px) {
-  .service-card-slide { min-width: calc(85%); }
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
 }
-@media (max-width: 600px) {
+
+.fade-up.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: 0.05s; }
+.d2 { transition-delay: 0.15s; }
+.d3 { transition-delay: 0.25s; }
+.d4 { transition-delay: 0.35s; }
+
+/* MODAL JOIAS */
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10,10,10,0.85);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+.modal-overlay.open { display: flex; }
+.modal-box {
+  background: var(--offwhite);
+  max-width: 360px;
+  width: 100%;
+  position: relative;
+}
+.modal-img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: contain;
+  background: #e5dfd0;
+  display: block;
+  background: #e5dfd0;
+}
+.modal-img-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background: #e5dfd0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-body { padding: 1.75rem; }
+.modal-tag {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  background: var(--blue);
+  color: var(--offwhite);
+  padding: 0.25rem 0.65rem;
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+.modal-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2rem;
+  text-transform: uppercase;
+  color: var(--black);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+.modal-mat {
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #999;
+  margin-bottom: 1rem;
+}
+.modal-price {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 2.5rem;
+  color: var(--blue);
+  margin-bottom: 1.5rem;
+  line-height: 1;
+}
+.modal-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  background: var(--blue);
+  color: var(--offwhite);
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.modal-btn:hover { background: var(--black); }
+.modal-close {
+  position: absolute;
+  top: 0.75rem; right: 0.75rem;
+  background: var(--black);
+  color: var(--offwhite);
+  border: none;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 1.2rem;
+  width: 32px; height: 32px;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 10;
+}  
+  
+@media (max-width: 600px)  {
+  .hero-img-placeholder { display: none; }
+  .services-header { flex-direction: column; }
+  .forms-section { flex-direction: column; }
+
   nav { padding: 0.75rem 1rem; }
   .nav-links { gap: 1rem; }
   .nav-links a { font-size: 0.7rem; }
+
   .hero { padding: 6rem 1.25rem 2rem; }
   .hero-title { font-size: clamp(2.5rem, 14vw, 4rem); }
   .hero-sub { font-size: 0.85rem; }
-  .joias-section { padding: 3.5rem 1.25rem; }
+
+  .why-section, .services-section, .joias-section { padding: 3.5rem 1.25rem; }
+  .manifesto { padding: 3rem 1.25rem; }
+  .important-section { padding: 3rem 1.25rem; }
+
+  .why-grid { grid-template-columns: 1fr; }
+  .why-card { border-right: none; border-bottom: 2px solid var(--black); }
+  .why-card:last-child { border-bottom: none; }
+
+  .services-grid { grid-template-columns: 1fr; }
+
   .joias-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
   .joia-name { font-size: 0.85rem; }
   .joia-price { font-size: 0.95rem; }
+
   .contact-section { padding: 4rem 1.25rem; }
   .contact-title { font-size: clamp(2.5rem, 12vw, 4rem); }
   .contact-links { flex-direction: column; }
-  .btn-contact-ig { width: 100%; justify-content: center; }
+  .btn-contact-wpp, .btn-contact-ig { width: 100%; justify-content: center; }
+
   .modal-box { max-width: 100%; margin: 0; }
   .modal-overlay { padding: 0; align-items: flex-end; }
-  .service-card-slide { min-width: 90%; }
-  .why-tabs { flex-wrap: wrap; }
-  .why-tab-btn { font-size: 0.62rem; padding: 0.6rem 0.5rem; }
-  section > div[style*="grid-template-columns:1fr 1fr"] { grid-template-columns: 1fr !important; }
-  section > div[style*="grid-template-columns:repeat(4"] { grid-template-columns: 1fr 1fr !important; }
+  .modal-box { border-radius: 0; }
 }
 </style>
 </head>
@@ -412,7 +990,7 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="nav-logo">BALLIN <span>BY YA</span></a>
+  <a href="#" class="nav-logo">HOME <span>.</span></a>
   <ul class="nav-links">
     <li><a href="#joias">Curadoria</a></li>
     <li><a href="#servicos">Serviços</a></li>
@@ -423,12 +1001,16 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg-text" aria-hidden="true">BALLIN</div>
+
+
   <div class="hero-content">
-    <p class="hero-eyebrow">@YABALLIN · Brasil</p>
+    <p class="hero-eyebrow">YABALLLIN ® · Brasil</p>
     <h1 class="hero-title">
+      <br>
       <span class="accent">YA</span><br>
-      BALLIN.
+      BALLIN.<br>
     </h1>
+   </p>
     <div class="hero-ctas">
       <a href="#joias" class="btn-outline-white">Curadoria</a>
       <a href="#servicos" class="btn-yellow">Serviços</a>
@@ -439,20 +1021,20 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
 <!-- MARQUEE -->
 <div class="marquee-wrap" aria-hidden="true">
   <div class="marquee-track">
-    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Vintage Shop</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">@yaballin</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">Vintage Shop</span><span class="marquee-sep">✦</span>
-    <span class="marquee-item">@yaballin</span><span class="marquee-sep">✦</span>
+    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Vintage Shop</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">@yaballin</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Personal Shopper</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Montagem de Looks</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Mala de Viagem</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Mini-Cápsula</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Pacote Mensal</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">Vintage Shop</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
+    <span class="marquee-item">@yaballin</span><span class="marquee-sep"><i class="fa-brands fa-y-combinator"></i></span>
   </div>
 </div>
 
@@ -464,226 +1046,392 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
       <h2 class="joias-title fade-up">Vintage<br><span>Shop</span></h2>
     </div>
   </div>
+
   <div class="joias-grid">
-    <div class="joia-card fade-up" onclick="openModal('Nome', 'Material', 'R$ 000', 'Novo', ['colarya1.jpg','colarya1b.jpg','colarya1c.jpg'])">
-      <div class="joia-img"><img src="colarya1.jpg" alt="Nome da Peça" class="joia-img-foto"><span class="joia-badge novo">Novo</span></div>
+<div class="joia-card fade-up" onclick="openModal('Nome', 'Material', 'R$ 000', 'Novo', ['colarya1.jpg','colarya1b.jpg','colarya1c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya1.jpg" alt="Nome da Peça" class="joia-img-foto">
+        <span class="joia-badge novo">Novo</span>
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+  <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+    </div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya2.jpg','colarya2b.jpg','colarya2c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya2.jpg" alt="Nome da Peça" class="joia-img-foto">
+        <span class="joia-badge">Destaque</span>
+      </div>
+      <h4 class="joia-name">Nome da Peça</h4>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Destaque', ['colarya2.jpg','colarya2b.jpg','colarya2c.jpg'])">
-      <div class="joia-img"><img src="colarya2.jpg" alt="Nome da Peça" class="joia-img-foto"><span class="joia-badge">Destaque</span></div>
+   <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya3.jpg','colarya3b.jpg','colarya3c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya3.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya3.jpg'])">
-      <div class="joia-img"><img src="colarya3.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya4.jpg','colarya4b.jpg','colarya4c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya4.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya4.jpg'])">
-      <div class="joia-img"><img src="colarya4.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya5.jpg','colarya5b.jpg','colarya5c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya5.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya5.jpg'])">
-      <div class="joia-img"><img src="colarya5.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya6.jpg','colarya6b.jpg','colarya6c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya6.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya6.jpg'])">
-      <div class="joia-img"><img src="colarya6.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya7.jpg','colarya7b.jpg','colarya7c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya7.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya7.jpg'])">
-      <div class="joia-img"><img src="colarya7.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya8.jpg','colarya8b.jpg','colarya8c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya8.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya8.jpg'])">
-      <div class="joia-img"><img src="colarya8.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+     <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya9.jpg','colarya9b.jpg','colarya9c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya9.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya9.jpg'])">
-      <div class="joia-img"><img src="colarya9.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', '['colarya10.jpg','colarya10b.jpg','colarya10c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya10.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya10.jpg'])">
-      <div class="joia-img"><img src="colarya10.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya11.jpg','colarya11b.jpg','colarya11c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya11.jpg" alt="Nome da Peça" class="joia-img-foto">
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
+       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Disponível', ['colarya11.jpg'])">
-      <div class="joia-img"><img src="colarya11.jpg" alt="Nome da Peça" class="joia-img-foto"></div>
+   <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Novo', ['colarya12.jpg','colarya12b.jpg','colarya12c.jpg'])">
+  <div class="joia-img">
+  <img src="colarya12.jpg" alt="Nome da Peça" class="joia-img-foto">
+        <span class="joia-badge ultimo">Último</span>
+      </div>
       <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
-      <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
-    </div>
-    <div class="joia-card fade-up" onclick="openModal('Nome da Peça', 'Material', 'R$ 000', 'Último', ['colarya12.jpg'])">
-      <div class="joia-img"><img src="colarya12.jpg" alt="Nome da Peça" class="joia-img-foto"><span class="joia-badge ultimo">Último</span></div>
-      <h4 class="joia-name">Nome da Peça</h4>
-      <div class="joia-meta"><span class="joia-mat">Material</span><span class="joia-price">R$ 000</span></div>
+      <div class="joia-meta">
+        <span class="joia-mat">Material</span>
+        <span class="joia-price">R$ 000</span>
+      </div>
       <button style="margin-top:0.75rem;width:100%;padding:0.6rem;background:var(--blue);color:var(--offwhite);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.75rem;letter-spacing:0.14em;text-transform:uppercase;border:none;cursor:pointer;">Eu quero →</button>
     </div>
   </div>
+
   <p style="text-align:center;margin-top:2rem;font-size:0.78rem;color:#999;font-weight:300;">Estoque rotativo · Retirada por conta do comprador</p>
-</section>
+</section>  
 
-<!-- STYLING SECTION: tabs + carrossel + mini importante -->
-<section class="styling-section" id="servicos">
-
-  <!-- Header -->
-  <div class="styling-header">
+<!-- SERVICES -->
+<section class="services-section" id="servicos">
+  <div class="services-header">
     <div>
       <p class="section-label">Contrate</p>
-      <h2 class="styling-title fade-up">Os meus<br><span>serviços</span></h2>
+      <h2 class="services-title fade-up">Os meus<br><span>serviços</span></h2>
     </div>
-    <a href="ballin-by-ya.pdf" download target="_blank" class="btn-yellow" style="align-self:flex-end;">Baixar apresentação ↓</a>
+    <p style="font-size:0.78rem;color:#888;max-width:220px;font-weight:300;line-height:1.6;"></p>
   </div>
 
-  <!-- CARROSSEL -->
-  <div class="services-carousel-wrap">
-    <div class="services-carousel-header">
-      <span class="services-carousel-label">Styling</span>
-      <div class="services-carousel-nav">
-        <button class="sc-btn" onclick="scNav(-1)">←</button>
-        <button class="sc-btn" onclick="scNav(1)">→</button>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-tag">Compras</div>
+      <h3 class="service-name">Personal<br>Shopper</h3>
+      <p class="service-desc">Acompanhamento em compras ou lista personalizada com links + direcionamento para renovar peças.</p>
+      <ul class="service-includes">
+        <li>Dicas de uso e combinações práticas durante a sessão</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">1h ou 2h</p>
+        </div>
+        <div style="text-align:right">
+        </div>
       </div>
     </div>
-    <div class="services-track-outer">
-      <div class="services-track" id="services-track">
 
-        <div class="service-card-slide">
-          <div class="service-tag">Compras</div>
-          <h3 class="service-name">Personal<br>Shopper</h3>
-          <p class="service-desc">Acompanhamento em compras ou lista personalizada com links + direcionamento para renovar peças.</p>
-          <ul class="service-includes"><li>Dicas de uso e combinações práticas durante a sessão</li></ul>
-          <div class="service-footer"><p class="service-duration">1h ou 2h</p></div>
+    <div class="service-card">
+      <div class="service-tag">Looks</div>
+      <h3 class="service-name">Montagem<br>de Looks</h3>
+      <p class="service-desc">Sessão presencial para montar até 02 looks com o que você já tem. Inclui fotos e sugestões rápidas de uso.</p>
+      <ul class="service-includes">
+        <li>Criação de até 02 looks</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">2h</p>
         </div>
-
-        <div class="service-card-slide">
-          <div class="service-tag">Looks</div>
-          <h3 class="service-name">Montagem<br>de Looks</h3>
-          <p class="service-desc">Sessão presencial para montar até 02 looks com o que você já tem. Inclui fotos e sugestões rápidas de uso.</p>
-          <ul class="service-includes"><li>Criação de até 02 looks</li><li>Fotos dos looks organizados</li><li>Dicas de uso e combinações práticas</li></ul>
-          <div class="service-footer"><p class="service-duration">2h</p></div>
-        </div>
-
-        <div class="service-card-slide">
-          <div class="service-tag">Viagem</div>
-          <h3 class="service-name">Mala de<br>Viagem</h3>
-          <p class="service-desc">Looks coordenados para uma viagem de até 7 dias. Inclui sugestão de peças extras e acessórios.</p>
-          <ul class="service-includes"><li>Looks completos para 7 dias</li><li>Sugestão de peças extras e acessórios</li><li>Fotos dos looks organizados</li></ul>
-          <div class="service-footer"><p class="service-duration">2h30 a 3h</p></div>
-        </div>
-
-        <div class="service-card-slide" style="border-top:4px solid var(--blue);">
-          <div class="service-tag" style="background:var(--red);">Mais Popular</div>
-          <h3 class="service-name">Pacote<br>Mini-Cápsula</h3>
-          <p class="service-desc">Montagem de até 15 looks combináveis com 10–12 peças. Ideal para quem quer uma base de guarda-roupa funcional.</p>
-          <ul class="service-includes"><li>Criação de até 15 looks</li><li>Fotos dos looks organizados</li><li>Dicas de uso e combinações práticas</li></ul>
-          <div class="service-footer"><p class="service-duration">3h</p></div>
-        </div>
-
-        <div class="service-card-slide">
-          <div class="service-tag">Mensal</div>
-          <h3 class="service-name">Pacote<br>Mensal</h3>
-          <p class="service-desc">Acompanhamento ao longo do mês, com até 3 encontros + fotos dos looks organizados.</p>
-          <ul class="service-includes"><li>3 sessões presenciais</li><li>Fotos dos looks organizados</li><li>Dicas de uso e combinações práticas</li></ul>
-          <div class="service-footer"><p class="service-duration">3× 2h</p></div>
-        </div>
-
       </div>
     </div>
-    <!-- Progress dots -->
-    <div class="sc-progress" id="sc-progress">
-      <div class="sc-dot active" onclick="scGo(0)"></div>
-      <div class="sc-dot" onclick="scGo(1)"></div>
-      <div class="sc-dot" onclick="scGo(2)"></div>
-      <div class="sc-dot" onclick="scGo(3)"></div>
-      <div class="sc-dot" onclick="scGo(4)"></div>
-      <div class="sc-dot" onclick="scGo(5)"></div>
+
+    <div class="service-card">
+      <div class="service-tag">Viagem</div>
+      <h3 class="service-name">Mala de<br>Viagem</h3>
+      <p class="service-desc">Looks coordenados para uma viagem de até 7 dias. Inclui sugestão de peças extras e acessórios.</p>
+      <ul class="service-includes">
+        <li>Looks completos para 7 dias</li>
+        <li>Sugestão de peças extras e acessórios</li>
+        <li>Fotos dos looks organizados</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">2h30 a 3h</p>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- MINI IMPORTANTE -->
-  <div class="mini-importante">
-    <div class="mini-item"><span class="mini-num">01</span><p class="mini-text">Agendamento com mínimo 4 dias de antecedência.</p></div>
-    <div class="mini-item"><span class="mini-num">02</span><p class="mini-text">50% do valor como sinal para confirmar o atendimento.</p></div>
-    <div class="mini-item"><span class="mini-num">03</span><p class="mini-text">Aluguel de peças cobrado à parte, se necessário.</p></div>
-    <div class="mini-item"><span class="mini-num">04</span><p class="mini-text">Cancelamento com menos de 48h perde o sinal.</p></div>
-    <div class="mini-item"><span class="mini-num">05</span><p class="mini-text">Pagamento via Pix ou transferência bancária.</p></div>
-  </div>
+    <div class="service-card" style="border-top: 4px solid var(--blue);">
+      <div class="service-tag" style="background:var(--red);">Mais Popular</div>
+      <h3 class="service-name">Pacote<br>Mini-Cápsula</h3>
+      <p class="service-desc">Montagem de até 15 looks combináveis com 10–12 peças. Ideal para quem quer uma base de guarda-roupa funcional.</p>
+      <ul class="service-includes">
+        <li>Criação de até 15 looks</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">3h</p>
+        </div>
+      </div>
+    </div>
 
+    <div class="service-card">
+      <div class="service-tag">Mensal</div>
+      <h3 class="service-name">Pacote<br>Mensal</h3>
+      <p class="service-desc">Acompanhamento ao longo do mês, com até 3 encontros + fotos dos looks organizados.</p>
+      <ul class="service-includes">
+        <li>3 sessões presenciais</li>
+        <li>Fotos dos looks organizados</li>
+        <li>Dicas de uso e combinações práticas</li>
+      </ul>
+      <div class="service-footer">
+        <div>
+          <p class="service-duration">3× 2h</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="service-card">
+  <h3 class="service-name">Pra começar,<br>me fala do<br>seu estilo</h3>
+  <p class="service-desc">
+    Responda o forms e eu entro em contato!
+  </p>
+  <div class="service-footer">
+    <a href="https://forms.gle/SEU_LINK_AQUI" class="btn-forms" target="_blank" rel="noopener">
+      Preencher o forms →
+    </a>
+  </div>
+</div>
+
+  </div>
+  <div style="text-align:center;margin-top:3rem;">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;color:#888;margin-bottom:1rem;">Quer ver tudo com detalhes?</p>
+  <a href="ballin-by-ya.pdf" download target="_blank" class="btn-yellow">Baixar apresentação completa ↓</a>
+</div>
 </section>
 
-<!-- POR QUE / MANIFESTO -->
+<!-- IMPORTANT -->
+<section class="important-section">
+  <h2 class="important-title">Importante:</h2>
+  <div class="important-grid">
+    <div class="important-item fade-up">
+      <span class="important-num">01</span>
+      <p class="important-text">O agendamento deve ser feito com, no mínimo, 4 dias de antecedência.</p>
+    </div>
+    <div class="important-item fade-up d1">
+      <span class="important-num">02</span>
+      <p class="important-text">Para confirmar o atendimento, é necessário o pagamento de 50% do valor como sinal.</p>
+    </div>
+    <div class="important-item fade-up d2">
+      <span class="important-num">03</span>
+      <p class="important-text">Caso opte pelo aluguel de peças com o direcional da stylist, será cobrado um valor adicional referente às peças.</p>
+    </div>
+    <div class="important-item fade-up d3">
+      <span class="important-num">04</span>
+      <p class="important-text">Em caso de cancelamento com menos de 48h de antecedência, o sinal não será reembolsado.</p>
+    </div>
+    <div class="important-item fade-up d4">
+      <span class="important-num">05</span>
+      <p class="important-text">Formas de pagamento: Pix ou transferência bancária.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUE -->
 <section style="border-bottom:3px solid var(--black);overflow:hidden;">
   <div style="display:grid;grid-template-columns:1fr 1fr;min-height:400px;">
     <div style="background:var(--offwhite);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;">
-      <h2 class="why-title fade-up" style="margin-bottom:0;">BALLIN BY YA:<br>traduzindo a sua personalidade<br>em cada detalhe.</h2>
+      <h2 class="why-title fade-up" style="margin-bottom:2rem;">Por que<br>investir em<br>um stylist?</h2>
     </div>
     <div style="background:var(--blue);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:center;">
-      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.4rem,3vw,2.2rem);text-transform:uppercase;color:var(--offwhite);line-height:1.05;margin-bottom:0.75rem;">buscando ouro onde você nem sabia que tinha — e transformando em <span style="color:var(--yellow);">personalidade.</span></h3>
+      <h3 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(1.4rem,3vw,2.2rem);text-transform:uppercase;color:var(--offwhite);line-height:1.05;margin-bottom:0.75rem;">BALLIN BY YA:<br>traduzindo a sua <span style="color:var(--red);">personalidade</span><br>em cada <span style="color:var(--yellow);">detalhe.</span></h3>
       <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(240,235,224,0.5);">com aquele toque que faz todo mundo perguntar: amiga, onde você comprou?</p>
     </div>
   </div>
-</section>
-
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);border-top:3px solid var(--black);">
+    <div class="why-card fade-up d1">
+      <div class="why-card-num">01</div>
+      <h3 class="why-card-title">Olhar Certeiro</h3>
+      <p class="why-card-desc">Enxergue combinações que valorizam seu corpo e sua energia, sem achismos.</p>
+    </div>
+    <div class="why-card fade-up d2">
+      <div class="why-card-num">02</div>
+      <h3 class="why-card-title">Economia de Tempo</h3>
+      <p class="why-card-desc">Looks prontos e sem estresse. Você abre o guarda-roupa e sabe exatamente o que colocar.</p>
+    </div>
+    <div class="why-card fade-up d3">
+      <div class="why-card-num">03</div>
+      <h3 class="why-card-title">Autenticidade</h3>
+      <p class="why-card-desc">Roupas que refletem quem você é, não só tendências. Seu estilo, potencializado.</p>
+    </div>
+    <div class="why-card fade-up d4">
+      <div class="why-card-num">04</div>
+      <h3 class="why-card-title">Impacto Imediato</h3>
+      <p class="why-card-desc">Entre em qualquer lugar e seja lembrada. A roupa certa muda a forma como o mundo te vê.</p>
+    </div>
+  </div>
+</section> 
+  
 <!-- TIKTOK -->
 <section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
-  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;"><span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>No TikTok</p>
-  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">ASSISTE LÁ<br><span style="color:var(--yellow);">@YABALLIN</span></h2>
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;">
+    <span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>
+    No TikTok
+  </p>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">
+    ASSISTE LÁ<br><span style="color:var(--yellow);">@YABALLIN</span>
+  </h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;justify-items:center;">
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaballin/video/7622352920134061332" data-video-id="7622352920134061332" style="max-width:100%;min-width:280px;margin:0;"><section><a target="_blank" title="@yaballin" href="https://www.tiktok.com/@yaballin?refer=embed">@yaballin</a><a target="_blank" title="♬ som original - yaballin" href="https://www.tiktok.com/music/som-original-7622353093128784648?refer=embed">♬ som original - yaballin</a></section></blockquote>
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaballin/video/7641634218795158804" data-video-id="7641634218795158804" style="max-width:100%;min-width:280px;margin:0;"><section><a target="_blank" title="@yaballin" href="https://www.tiktok.com/@yaballin?refer=embed">@yaballin</a><a target="_blank" title="♬ original sound - elo" href="https://www.tiktok.com/music/original-sound-7464391988608256814?refer=embed">♬ original sound - elo</a></section></blockquote>
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaballin/video/7612868584909376789" data-video-id="7612868584909376789" style="max-width:100%;min-width:280px;margin:0;"><section><a target="_blank" title="@yaballin" href="https://www.tiktok.com/@yaballin?refer=embed">@yaballin</a><a target="_blank" title="♬ som original - yaballin" href="https://www.tiktok.com/music/som-original-7612868679149816583?refer=embed">♬ som original - yaballin</a></section></blockquote>
     <blockquote class="tiktok-embed" cite="https://www.tiktok.com/@yaballin/video/7618225449667153173" data-video-id="7618225449667153173" style="max-width:100%;min-width:280px;margin:0;"><section><a target="_blank" title="@yaballin" href="https://www.tiktok.com/@yaballin?refer=embed">@yaballin</a><a target="_blank" title="♬ Anjos - O Rappa" href="https://www.tiktok.com/music/Anjos-Pra-quem-tem-fé-6705007608081680385?refer=embed">♬ Anjos - O Rappa</a></section></blockquote>
+    </div>
+  <div style="text-align:center;margin-top:2.5rem;">
+    <a href="https://tiktok.com/@yaballin" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os vídeos →</a>
   </div>
-  <div style="text-align:center;margin-top:2.5rem;"><a href="https://tiktok.com/@yaballin" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os vídeos →</a></div>
 </section>
 <script async src="https://www.tiktok.com/embed.js"></script>
 
-<!-- INSTAGRAM @yaballin -->
+  <!-- INSTAGRAM -->
 <section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
-  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;"><span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>No Instagram</p>
-  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">ACOMPANHE<br><span style="color:var(--yellow);">@YABALLIN</span></h2>
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;">
+    <span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>
+    No Instagram
+  </p>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">
+    ACOMPANHE<br><span style="color:var(--yellow);">@YABALLIN</span>
+  </h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;justify-items:center;">
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
+       <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DS0xjLXEb6n/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DO8sqSVET-M/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DQedDlnEX9i/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+   <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DMwG0HwxOYX/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yaballin</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>  
   </div>
-  <div style="text-align:center;margin-top:2.5rem;"><a href="https://instagram.com/yaballin" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os posts →</a></div>
+  <div style="text-align:center;margin-top:2.5rem;">
+    <a href="https://instagram.com/yaballin" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os posts →</a>
+  </div>
 </section>
 <script async src="https://www.instagram.com/embed.js"></script>
 
-<!-- INSTAGRAM @yayadisco -->
+<!-- INSTAGRAM -->
 <section style="background:var(--black);padding:6rem 2rem;border-bottom:3px solid var(--black);">
-  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;"><span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>No Instagram</p>
-  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">INSPIRAÇÃO DIÁRIA<br><span style="color:var(--yellow);">@YAYADISCO</span></h2>
+  <p style="font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:0.7rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem;display:flex;align-items:center;gap:0.75rem;">
+    <span style="display:inline-block;width:20px;height:2px;background:var(--blue);"></span>
+    No Instagram
+  </p>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-weight:900;font-size:clamp(2.5rem,6vw,5rem);text-transform:uppercase;color:var(--offwhite);line-height:0.95;margin-bottom:3rem;">
+    INSPIRAÇÃO DIÁRIA<br><span style="color:var(--yellow);">@YAYADISCO</span>
+  </h2>
   <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.5rem;justify-items:center;">
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF;border:0;border-radius:3px;box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15);margin:1px;max-width:540px;min-width:326px;padding:0;width:calc(100% - 2px);"><div style="padding:16px;"><a href="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" style="background:#FFF;line-height:0;padding:0;text-align:center;text-decoration:none;width:100%;" target="_blank"><div style="padding:19% 0;"></div><p style="color:#c9c8cd;font-family:Arial,sans-serif;font-size:14px;margin:8px 0;text-align:center;"><a href="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" style="color:#c9c8cd;text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
+      <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DTJTZFPiXwc/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>    
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DV3e6khDli7/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DT5Xl6ODr42/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>    
+<blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style=" background:#FFF; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);"><div style="padding:16px;"> <a href="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank"> <div style=" display: flex; flex-direction: row; align-items: center;"> <div style="background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 40px; margin-right: 14px; width: 40px;"></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 100px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 60px;"></div></div></div><div style="padding: 19% 0;"></div> <div style="display:block; height:50px; margin:0 auto 12px; width:50px;"><svg width="50px" height="50px" viewBox="0 0 60 60" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-511.000000, -20.000000)" fill="#000000"><g><path d="M556.869,30.41 C554.814,30.41 553.148,32.076 553.148,34.131 C553.148,36.186 554.814,37.852 556.869,37.852 C558.924,37.852 560.59,36.186 560.59,34.131 C560.59,32.076 558.924,30.41 556.869,30.41 M541,60.657 C535.114,60.657 530.342,55.887 530.342,50 C530.342,44.114 535.114,39.342 541,39.342 C546.887,39.342 551.658,44.114 551.658,50 C551.658,55.887 546.887,60.657 541,60.657 M541,33.886 C532.1,33.886 524.886,41.1 524.886,50 C524.886,58.899 532.1,66.113 541,66.113 C549.9,66.113 557.115,58.899 557.115,50 C557.115,41.1 549.9,33.886 541,33.886 M565.378,62.101 C565.244,65.022 564.756,66.606 564.346,67.663 C563.803,69.06 563.154,70.057 562.106,71.106 C561.058,72.155 560.06,72.803 558.662,73.347 C557.607,73.757 556.021,74.244 553.102,74.378 C549.944,74.521 548.997,74.552 541,74.552 C533.003,74.552 532.056,74.521 528.898,74.378 C525.979,74.244 524.393,73.757 523.338,73.347 C521.94,72.803 520.942,72.155 519.894,71.106 C518.846,70.057 518.197,69.06 517.654,67.663 C517.244,66.606 516.755,65.022 516.623,62.101 C516.479,58.943 516.448,57.996 516.448,50 C516.448,42.003 516.479,41.056 516.623,37.899 C516.755,34.978 517.244,33.391 517.654,32.338 C518.197,30.938 518.846,29.942 519.894,28.894 C520.942,27.846 521.94,27.196 523.338,26.654 C524.393,26.244 525.979,25.756 528.898,25.623 C532.057,25.479 533.004,25.448 541,25.448 C548.997,25.448 549.943,25.479 553.102,25.623 C556.021,25.756 557.607,26.244 558.662,26.654 C560.06,27.196 561.058,27.846 562.106,28.894 C563.154,29.942 563.803,30.938 564.346,32.338 C564.756,33.391 565.244,34.978 565.378,37.899 C565.522,41.056 565.552,42.003 565.552,50 C565.552,57.996 565.522,58.943 565.378,62.101 M570.82,37.631 C570.674,34.438 570.167,32.258 569.425,30.349 C568.659,28.377 567.633,26.702 565.965,25.035 C564.297,23.368 562.623,22.342 560.652,21.575 C558.743,20.834 556.562,20.326 553.369,20.18 C550.169,20.033 549.148,20 541,20 C532.853,20 531.831,20.033 528.631,20.18 C525.438,20.326 523.257,20.834 521.349,21.575 C519.376,22.342 517.703,23.368 516.035,25.035 C514.368,26.702 513.342,28.377 512.574,30.349 C511.834,32.258 511.326,34.438 511.181,37.631 C511.035,40.831 511,41.851 511,50 C511,58.147 511.035,59.17 511.181,62.369 C511.326,65.562 511.834,67.743 512.574,69.651 C513.342,71.625 514.368,73.296 516.035,74.965 C517.703,76.634 519.376,77.658 521.349,78.425 C523.257,79.167 525.438,79.673 528.631,79.82 C531.831,79.965 532.853,80.001 541,80.001 C549.148,80.001 550.169,79.965 553.369,79.82 C556.562,79.673 558.743,79.167 560.652,78.425 C562.623,77.658 564.297,76.634 565.965,74.965 C567.633,73.296 568.659,71.625 569.425,69.651 C570.167,67.743 570.674,65.562 570.82,62.369 C570.966,59.17 571,58.147 571,50 C571,41.851 570.966,40.831 570.82,37.631"></path></g></g></g></svg></div><div style="padding-top: 8px;"> <div style=" color:#3897f0; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:550; line-height:18px;">Ver essa foto no Instagram</div></div><div style="padding: 12.5% 0;"></div> <div style="display: flex; flex-direction: row; margin-bottom: 14px; align-items: center;"><div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(0px) translateY(7px);"></div> <div style="background-color: #F4F4F4; height: 12.5px; transform: rotate(-45deg) translateX(3px) translateY(1px); width: 12.5px; flex-grow: 0; margin-right: 14px; margin-left: 2px;"></div> <div style="background-color: #F4F4F4; border-radius: 50%; height: 12.5px; width: 12.5px; transform: translateX(9px) translateY(-18px);"></div></div><div style="margin-left: 8px;"> <div style=" background-color: #F4F4F4; border-radius: 50%; flex-grow: 0; height: 20px; width: 20px;"></div> <div style=" width: 0; height: 0; border-top: 2px solid transparent; border-left: 6px solid #f4f4f4; border-bottom: 2px solid transparent; transform: translateX(16px) translateY(-4px) rotate(30deg)"></div></div><div style="margin-left: auto;"> <div style=" width: 0px; border-top: 8px solid #F4F4F4; border-right: 8px solid transparent; transform: translateY(16px);"></div> <div style=" background-color: #F4F4F4; flex-grow: 0; height: 12px; width: 16px; transform: translateY(-4px);"></div> <div style=" width: 0; height: 0; border-top: 8px solid #F4F4F4; border-left: 8px solid transparent; transform: translateY(-4px) translateX(8px);"></div></div></div> <div style="display: flex; flex-direction: column; flex-grow: 1; justify-content: center; margin-bottom: 24px;"> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; margin-bottom: 6px; width: 224px;"></div> <div style=" background-color: #F4F4F4; border-radius: 4px; flex-grow: 0; height: 14px; width: 144px;"></div></div></a><p style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"><a href="https://www.instagram.com/p/DXwjFzOFoUt/?utm_source=ig_embed&amp;utm_campaign=loading" style=" color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;" target="_blank">Um post compartilhado por @yayadisco</a></p></div></blockquote>
+<script async src="//www.instagram.com/embed.js"></script>
   </div>
-  <div style="text-align:center;margin-top:2.5rem;"><a href="https://instagram.com/yayadisco" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os posts →</a></div>
+  <div style="text-align:center;margin-top:2.5rem;">
+    <a href="https://instagram.com/yayadisco" target="_blank" rel="noopener" class="btn-outline-white">Ver todos os posts →</a>
+  </div>
 </section>
 <script async src="https://www.instagram.com/embed.js"></script>
-
+  
 <!-- MODAL -->
 <div class="modal-overlay" id="modal" onclick="if(event.target===this)closeModal()">
   <div class="modal-box">
@@ -699,61 +1447,9 @@ footer { background: var(--black); padding: 1.5rem 2rem; display: flex; justify-
   </div>
 </div>
 
-<!-- CONTACT -->
-<section class="contact-section" id="contato">
-  <div class="contact-bg" aria-hidden="true"><span class="contact-bg-text">BALLIN BY YA</span></div>
-  <div class="contact-inner">
-    <h2 class="contact-title fade-up">TE ENCONTRO<br>NA PRÓXIMA<br>SESSÃO</h2>
-    <span class="contact-tagline">BALLIN BY YA</span>
-    <div class="contact-links">
-      <a href="https://instagram.com/yaballin" class="btn-contact-ig" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://tiktok.com/@yaballin" class="btn-contact-ig" target="_blank" rel="noopener">TikTok</a>
-    </div>
-    <p class="contact-info">São Paulo, SP</p>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <span class="footer-logo">BALLIN <span>BY YA</span></span>
-  <span class="footer-copy">© 2026 Ballin by Ya · Todos os direitos reservados</span>
-</footer>
-
 <script>
-// TABS
-function switchTab(idx) {
-  document.querySelectorAll('.why-tab-btn').forEach((b,i) => b.classList.toggle('active', i===idx));
-  document.querySelectorAll('.why-tab-content').forEach((c,i) => c.classList.toggle('active', i===idx));
-}
-
-// CARROSSEL
-let scCurrent = 0;
-const scTotal = 6;
-const scVisible = () => window.innerWidth <= 768 ? 1 : 3;
-
-function scUpdate() {
-  const track = document.getElementById('services-track');
-  const cardW = track.children[0].offsetWidth;
-  track.style.transform = `translateX(-${scCurrent * cardW}px)`;
-  document.querySelectorAll('.sc-dot').forEach((d,i) => d.classList.toggle('active', i===scCurrent));
-}
-
-function scNav(dir) {
-  scCurrent = Math.max(0, Math.min(scTotal - scVisible(), scCurrent + dir));
-  scUpdate();
-}
-
-function scGo(idx) {
-  scCurrent = Math.max(0, Math.min(scTotal - scVisible(), idx));
-  scUpdate();
-}
-
-window.addEventListener('resize', scUpdate);
-
-// MODAL
 let modalPhotos = [];
-let modalPhotoIdx = 0;
-
+let modalPhotoIdx = 0;  
 function openModal(name, mat, price, tag, photos) {
   modalPhotos = Array.isArray(photos) ? photos : [photos];
   modalPhotoIdx = 0;
@@ -793,13 +1489,39 @@ function closeModal() {
   document.getElementById('modal').classList.remove('open');
   document.body.style.overflow = '';
 }
-
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+  
+<!-- CONTACT -->
+<section class="contact-section" id="contato">
+  <div class="contact-bg" aria-hidden="true">
+    <span class="contact-bg-text">BALLIN BY YA</span>
+  </div>
+  <div class="contact-inner">
+    <h2 class="contact-title fade-up">TE ENCONTRO<br>NA PRÓXIMA<br>SESSÃO</h2>
+    <span class="contact-tagline">BALLIN BY YA</span>
+    <div class="contact-links">
+      <!-- Troque o número pelo seu -->
+      <a href="https://instagram.com/yaballin" class="btn-contact-ig" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://tiktok.com/@yaballin" class="btn-contact-ig" target="_blank" rel="noopener">TikTok</a>
+    </div>
+    <p class="contact-info">São Paulo, SP</p>
+  </div>
+</section>
 
-// FADE UP
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">BALLIN <span>BY YA</span></span>
+  <span class="footer-copy">© 2026 Ballin by Ya · Todos os direitos reservados</span>
+</footer>
+
+<script>
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  entries.forEach(e => {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
 }, { threshold: 0.1 });
+
 document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 </script>
 
